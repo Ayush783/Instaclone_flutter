@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:insta_clone/dmscreen/dm%20appbar.dart';
+import 'dm widget.dart';
 
 class Dmscreen extends StatefulWidget {
   @override
@@ -10,11 +11,43 @@ class _DmscreenState extends State<Dmscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appbar(),
+
+      //bottom nav bar in dm screen::
+
+      bottomNavigationBar: RawMaterialButton(
+        elevation: 30,
+        onPressed: () {},
+        child: Container(
+          height: 48,
+          decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.grey[300]))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(
+                Icons.photo_camera,
+                color: Colors.blue,
+                size: 30,
+              ),
+              Text(
+                "  Camera",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              )
+            ],
+          ),
+        ),
+      ),
+      appBar: Dmappbar().appbar(),
       body: ListView(
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16),
         children: <Widget>[
+ 
+         //search text field::
+
           Container(
             padding: EdgeInsets.symmetric(vertical: 15),
             child: Container(
@@ -48,6 +81,9 @@ class _DmscreenState extends State<Dmscreen> {
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
             ),
           ),
+
+         //sample dm content::
+
           Dms("Google",
                   "https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0?e=2159024400&v=beta&t=0e00tehBFFtuqgUCfAijpOkoBl89jxOTIe_k9HHpi_4")
               .dms(),
@@ -81,92 +117,3 @@ class _DmscreenState extends State<Dmscreen> {
   }
 }
 
-Widget _appbar() {
-  return AppBar(
-    titleSpacing: .2,
-    leading: RawMaterialButton(
-      splashColor: Colors.white,
-      onPressed: () {
-        print("camera pressed");
-      },
-      child: Icon(
-        MaterialCommunityIcons.arrow_left,
-        size: 30,
-      ),
-    ),
-    title: Text(
-      "Direct",
-    ),
-    elevation: 1.2,
-    actions: <Widget>[
-      Padding(
-        padding: EdgeInsets.only(right: 0),
-        child: RawMaterialButton(
-            constraints: BoxConstraints(maxHeight: 30, minWidth: 30),
-            splashColor: Colors.white,
-            onPressed: () {
-              print("back icon pressed");
-            },
-            child: Icon(
-              MaterialCommunityIcons.video_outline,
-              size: 30,
-              color: Colors.black87,
-            )),
-      ),
-      RawMaterialButton(
-        constraints: BoxConstraints(maxHeight: 30, minWidth: 30),
-        splashColor: Colors.white,
-        onPressed: () {
-          print("back icon pressed");
-        },
-        child: Icon(
-          MaterialCommunityIcons.chat_outline,
-          size: 30,
-        ),
-      ),
-    ],
-  );
-}
-
-//Dms widget
-class Dms {
-  String accName;
-  String url;
-
-  Dms(this.accName, this.url);
-
-  Widget dms() {
-    return RawMaterialButton(
-      highlightColor: Colors.transparent,
-      splashColor: Colors.grey[400],
-      onPressed: () {},
-      child: ListTile(
-        contentPadding: EdgeInsets.all(0),
-        leading: CircleAvatar(
-          radius: 26,
-          backgroundImage: NetworkImage(url),
-        ),
-        title: Text(accName),
-        subtitle: Text.rich(
-          TextSpan(
-              text: "recent message....",
-              style: TextStyle(
-                color: Colors.grey,
-              ),
-              children: <TextSpan>[
-                TextSpan(
-                    text: "time", style: TextStyle(fontWeight: FontWeight.w600))
-              ]),
-        ),
-        trailing: RawMaterialButton(
-          constraints: BoxConstraints(maxWidth: 8),
-          onPressed: () {},
-          child: Icon(
-            Icons.photo_camera,
-            size: 29,
-          ),
-        ),
-      ),
-    );
-  }
-}
