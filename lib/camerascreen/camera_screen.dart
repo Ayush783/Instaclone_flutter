@@ -2,9 +2,10 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:insta_clone/capturebutton.dart';
-import 'package:insta_clone/features.dart';
-import 'package:insta_clone/gallerybutton.dart';
+import 'package:insta_clone/camerascreen/capturebutton.dart';
+import 'package:insta_clone/camerascreen/features.dart';
+import 'package:insta_clone/camerascreen/gallerybutton.dart';
+
 
 List<CameraDescription> cameras;
 

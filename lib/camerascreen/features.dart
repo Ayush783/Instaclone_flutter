@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'const.dart';
+import '../const.dart';
 class Features{
   Widget features(){
       return Container(
