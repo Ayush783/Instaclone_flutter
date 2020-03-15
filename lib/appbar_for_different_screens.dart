@@ -8,10 +8,10 @@ import 'instagram_appbar.dart';
 class Apbar {
   int index;
   Apbar(this.index);
-  Widget appbar() {
+  Widget appbar(BuildContext context) {
     Widget bar;
     if (index == 0) {
-      bar = Instaappbar().appbar1();         //if else statements to change the appbar as per the displayed page in bottom nav bar
+      bar = Instaappbar().appbar1(context);         //if else statements to change the appbar as per the displayed page in bottom nav bar
     } else if (index == 1) {
       bar = Apbar2().appbar2();
     } else if (index == 2) {

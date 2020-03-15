@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Physics{
   int index;
@@ -14,3 +15,5 @@ class Physics{
     return phy;
   }
 }
+
+const TextStyle ktextstyle= TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 13.5,letterSpacing: 1.5);

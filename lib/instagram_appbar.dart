@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:insta_clone/dmscreen/dm_page.dart';
 
 class Instaappbar{
-Widget appbar1() {
+Widget  appbar1(BuildContext context) {
   return AppBar(
     titleSpacing: .2,
     leading: RawMaterialButton(
@@ -28,7 +29,7 @@ Widget appbar1() {
           constraints: BoxConstraints(maxHeight: 30, minWidth: 30),
           splashColor: Colors.white,
           onPressed: () {
-            print("chat icon pressed");
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Dmscreen()),);
           },
           child: Image.asset(
             'images/dm.png',

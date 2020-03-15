@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
         onTap: _onItemTapped,
       ),
       //bottom nav bar end
-      appBar: Apbar(HomePage._selectedIndex).appbar(),
+      appBar: Apbar(HomePage._selectedIndex).appbar(context),
       body: _widgetOptions.elementAt(HomePage._selectedIndex),
     );
   }
