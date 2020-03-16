@@ -59,7 +59,7 @@ class _CamerascreenState extends State<Camerascreen> {
             child: Row(
               children: <Widget>[
                 //button for accessing the gallery
-                GalleryButton().button(),
+                GalleryButton(),
 
                 //various features listed at the bottom of the camera screen
                 Features().features(),

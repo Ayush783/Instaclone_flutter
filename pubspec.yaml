@@ -16,6 +16,7 @@ dependencies:
   path_provider: ^1.6.5
   path: ^1.6.4
   video_player:
+  image_picker_modern: ^0.4.12+3
 
 
 dev_dependencies:
