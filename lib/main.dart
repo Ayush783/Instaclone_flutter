@@ -1,8 +1,9 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:insta_clone/camera_screen.dart';
 import 'package:insta_clone/homepage.dart';
-import 'camerascreen/camera_screen.dart';
 import 'dmscreen/dm_page.dart';
+
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();

@@ -55,9 +55,14 @@ class _PostState extends State<Post> {
               ),
             ),
             contentPadding: EdgeInsets.fromLTRB(8, 0, 10, 0),
-            title: Text(
-              widget.accName,
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+            title: GestureDetector(
+              onTap: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context)=>))
+              },
+              child: Text(
+                widget.accName,
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+              ),
             ),
             trailing: Icon(
               Icons.more_vert,

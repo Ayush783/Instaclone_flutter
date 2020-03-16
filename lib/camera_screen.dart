@@ -6,7 +6,6 @@ import 'package:insta_clone/camerascreen/capturebutton.dart';
 import 'package:insta_clone/camerascreen/features.dart';
 import 'package:insta_clone/camerascreen/gallerybutton.dart';
 
-
 List<CameraDescription> cameras;
 
 class Camerascreen extends StatefulWidget {
@@ -34,7 +33,8 @@ class _CamerascreenState extends State<Camerascreen> {
     controller.dispose();
     super.dispose();
   }
-  int i=0;
+
+  int i = 0;
   @override
   Widget build(BuildContext context) {
     if (!controller.value.isInitialized) {
@@ -67,9 +67,9 @@ class _CamerascreenState extends State<Camerascreen> {
                 //button to switvh camera, front to back or vice verse
                 RawMaterialButton(
                   onPressed: () {
-                    if (i==0) {
+                    if (i == 0) {
                       setState(() {
-                        i=1;
+                        i = 1;
                         controller =
                             CameraController(cameras[1], ResolutionPreset.high);
                         controller.initialize().then((_) {
@@ -81,7 +81,7 @@ class _CamerascreenState extends State<Camerascreen> {
                       });
                     } else {
                       setState(() {
-                        i=0;
+                        i = 0;
                         controller =
                             CameraController(cameras[0], ResolutionPreset.high);
                         controller.initialize().then((_) {
@@ -102,7 +102,20 @@ class _CamerascreenState extends State<Camerascreen> {
               ],
             ),
           ),
-          
+          Positioned(
+            top: 10,
+            left: 0,
+            child: RawMaterialButton(
+              onPressed: () {
+                
+              },
+              child: Icon(
+                MaterialCommunityIcons.close_outline,
+                color: Colors.white,
+                size: 35,
+              ),
+            ),
+          )
         ],
       ),
     );
