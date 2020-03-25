@@ -1,8 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/camera_screen.dart';
-import 'package:insta_clone/homepage.dart';
-import 'dmscreen/dm_page.dart';
+import 'package:insta_clone/login/login.dart';
 
 
 Future<void> main() async{
@@ -25,13 +24,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Color(0xffffffff),
       ),
       home: SafeArea(
-        child: PageView(controller: PageController(initialPage: 1),   //pageview to navigate between camera screen homepage and dm screen.
-        children: <Widget>[
-          Camerascreen(),
-          HomePage(),
-          Dmscreen(),
-        ],
-        ),
+        child: Scaffold(body: LoginScreen(),),
       ),
     );
   }

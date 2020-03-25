@@ -11,12 +11,14 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_icons: ^1.0.0+1
   camera: ^0.5.7+4
-  image_picker: ^0.6.3+4
   flutter_spinkit: "^4.1.2"
   path_provider: ^1.6.5
   path: ^1.6.4
   video_player:
-  image_picker_modern: ^0.4.12+3
+  image_picker:
+  firebase_core: ^0.4.4+3
+  firebase_auth: ^0.15.5+2
+  cloud_firestore: ^0.13.4+2
 
 
 dev_dependencies:

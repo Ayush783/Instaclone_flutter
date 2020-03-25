@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:image_picker_modern/image_picker_modern.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:insta_clone/camerascreen/displayimage.dart';
 
 class GalleryButton extends StatefulWidget {

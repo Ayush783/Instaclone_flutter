@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:insta_clone/accountscreen/accountscreen.dart';
 import 'package:insta_clone/searchscreens/homepage_search.dart';
 import 'appbar_for_different_screens.dart';
 import 'home_of_homepage/homepage_home.dart';
@@ -9,12 +10,6 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
   static int _selectedIndex = 0;
-  // ScrollPhysics physic(){
-  //   return Physics(_selectedIndex).physics();
-  // }
-  // int index(){
-  //   return _selectedIndex;
-  // }
 }
 
 class _HomePageState extends State<HomePage> {
@@ -30,9 +25,7 @@ class _HomePageState extends State<HomePage> {
     Text(
       '',
     ),
-    Text(
-      '',
-    ),
+    AccountScreen(),
   ];
 
   void _onItemTapped(int index) {
