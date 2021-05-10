@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Spacer(),
           Center(
             child: SvgPicture.asset(
-              'assets/images/logo.svg',
+              'assets/icons/logo.svg',
               height: 84,
             ),
           ),
