@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:supercharged/supercharged.dart';
 
-import '../homepage.dart';
+import 'dashboard.dart';
+import 'dashboard.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,10 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(1.seconds).then((value) {
+    Future.delayed(2.seconds).then((value) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => Dashboard(),
         ),
       );
     });
@@ -32,43 +33,45 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Spacer(),
-        Center(
-          child: SvgPicture.asset(
-            'assets/images/logo.svg',
-            height: 84,
-          ),
-        ),
-        Spacer(),
-        Text(
-          "from",
-          style: TextStyle(
-            color: Color(0xff707070),
-            fontFamily: 'monty',
-            fontSize: 18,
-          ),
-        ),
-        ShaderMask(
-          shaderCallback: (bounds) {
-            return linearGradient.createShader(bounds);
-          },
-          child: Text(
-            "FACEBOOK",
-            style: TextStyle(
-              fontFamily: 'monty',
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Spacer(),
+          Center(
+            child: SvgPicture.asset(
+              'assets/images/logo.svg',
+              height: 84,
             ),
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 48),
-        ),
-      ],
+          Spacer(),
+          Text(
+            "from",
+            style: TextStyle(
+              color: Color(0xff707070),
+              fontFamily: 'monty',
+              fontSize: 18,
+            ),
+          ),
+          ShaderMask(
+            shaderCallback: (bounds) {
+              return linearGradient.createShader(bounds);
+            },
+            child: Text(
+              "FACEBOOK",
+              style: TextStyle(
+                fontFamily: 'monty',
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 48),
+          ),
+        ],
+      ),
     );
   }
 }
