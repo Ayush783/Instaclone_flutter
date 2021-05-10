@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:supercharged/supercharged.dart';
 
 import 'dashboard.dart';
-import 'dashboard.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
