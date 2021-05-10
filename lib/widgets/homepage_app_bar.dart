@@ -13,6 +13,8 @@ class HomepageAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
+      centerTitle: true,
       leading: IconButton(
           icon: SvgPicture.asset(
             'assets/icons/plus.svg',
@@ -41,5 +43,5 @@ class HomepageAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size(double.maxFinite, double.maxFinite);
+  Size get preferredSize => Size(double.maxFinite, 50);
 }
