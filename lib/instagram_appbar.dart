@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:insta_clone/camera_screen.dart';
 import 'package:insta_clone/dmscreen/dm_page.dart';
 
@@ -18,7 +17,7 @@ class Instaappbar {
           );
         },
         child: Icon(
-          MaterialCommunityIcons.camera_outline,
+          Icons.flag,
           size: 30,
         ),
       ),

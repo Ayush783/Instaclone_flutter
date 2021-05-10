@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:insta_clone/camerascreen/displayimage.dart';
 
@@ -24,7 +23,7 @@ class _GalleryButtonState extends State<GalleryButton> {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () async{
+      onPressed: () async {
         await getImage();
         Navigator.push(
           context,
@@ -36,7 +35,7 @@ class _GalleryButtonState extends State<GalleryButton> {
         );
       },
       child: Icon(
-        MaterialCommunityIcons.image_album,
+        Icons.flag,
         size: 30,
         color: Colors.white,
       ),

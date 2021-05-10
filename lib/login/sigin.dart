@@ -1,7 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:insta_clone/mainpage.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -9,7 +6,6 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  final _auth = FirebaseAuth.instance;
   String text;
   String email;
   String password;
@@ -43,7 +39,7 @@ class _SignInScreenState extends State<SignInScreen> {
               decoration: InputDecoration(
                 hintText: 'Email',
                 icon: Icon(
-                  MaterialCommunityIcons.email,
+                  Icons.email,
                   color: Colors.red,
                 ),
                 border: OutlineInputBorder(
@@ -64,7 +60,7 @@ class _SignInScreenState extends State<SignInScreen> {
               decoration: InputDecoration(
                 hintText: 'Password',
                 icon: Icon(
-                  MaterialCommunityIcons.key,
+                  Icons.flag,
                   color: Colors.black54,
                 ),
                 border: OutlineInputBorder(
@@ -76,31 +72,13 @@ class _SignInScreenState extends State<SignInScreen> {
             SizedBox(
               height: 20,
             ),
-            
             SizedBox(
               height: 10,
             ),
             RawMaterialButton(
               highlightElevation: 0,
               highlightColor: Colors.transparent,
-              onPressed: () async {
-                try {
-                  final user = _auth.signInWithEmailAndPassword(
-                      email: email, password: password);
-                  if (user != null) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MainSreen(),
-                      ),
-                    );
-                  }
-                } catch (e) {          
-                  String error;
-                  error='Invalid Email or password!!';
-                  _buildErrorDialog(context, error);
-                }
-              },
+              onPressed: () {},
               splashColor: Colors.transparent,
               fillColor: Colors.blue,
               shape: RoundedRectangleBorder(
@@ -128,23 +106,3 @@ class _SignInScreenState extends State<SignInScreen> {
     ));
   }
 }
-
-Future _buildErrorDialog(BuildContext context, _message) {
-    return showDialog(
-      builder: (context) {
-        return AlertDialog(
-          title: Text('Error Message'),
-          content: Text(_message),
-          actions: [
-            FlatButton(
-                child: Text('OK'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                })
-          ],
-        );
-      },
-      context: context,
-    );
-  }
-

@@ -1,8 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:insta_clone/camerascreen/capturebutton.dart';
 import 'package:insta_clone/camerascreen/features.dart';
 import 'package:insta_clone/camerascreen/gallerybutton.dart';
 
@@ -38,9 +35,7 @@ class _CamerascreenState extends State<Camerascreen> {
   @override
   Widget build(BuildContext context) {
     if (!controller.value.isInitialized) {
-      return SpinKitCircle(
-        color: Colors.black,
-      );
+      return Container();
     }
     return Scaffold(
       body: Stack(
@@ -51,7 +46,7 @@ class _CamerascreenState extends State<Camerascreen> {
           Positioned(
             bottom: 70,
             left: 140,
-            child: Capturebutton(controller).takepicture(context),
+            child: Container(),
           ),
 
           Positioned(
@@ -94,7 +89,7 @@ class _CamerascreenState extends State<Camerascreen> {
                     }
                   },
                   child: Icon(
-                    MaterialCommunityIcons.camera_switch,
+                    Icons.camera,
                     color: Colors.white,
                     size: 30,
                   ),
@@ -106,11 +101,9 @@ class _CamerascreenState extends State<Camerascreen> {
             top: 10,
             left: 0,
             child: RawMaterialButton(
-              onPressed: () {
-                
-              },
+              onPressed: () {},
               child: Icon(
-                MaterialCommunityIcons.close_outline,
+                Icons.flag,
                 color: Colors.white,
                 size: 35,
               ),

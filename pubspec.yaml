@@ -8,35 +8,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  flutter_icons: ^1.0.0+1
-  camera: ^0.5.7+4
-  flutter_spinkit: "^4.1.2"
-  path_provider: ^1.6.5
+  camera: ^0.8.1
+  flutter_svg: ^0.22.0
+  image_picker: null
   path: ^1.6.4
-  video_player:
-  image_picker:
-  firebase_core: ^0.4.4+3
-  firebase_auth: ^0.15.5+2
-  cloud_firestore: ^0.13.4+2
-
+  path_provider: ^1.6.5
+  supercharged: ^2.0.0
+  video_player: null
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
-
 flutter:
   uses-material-design: true
   assets:
-   - images/
+    - assets/images/
 
   fonts:
     - family: Billa
       fonts:
-        - asset: fonts/Billabong.ttf
-    
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+        - asset: assets/fonts/Billabong.ttf
+    - family: monty
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf

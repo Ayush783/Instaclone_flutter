@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/searchscreens/search_appbar.dart';
+import 'package:insta_clone/screens/accountscreen/accounts_appbar.dart';
+import 'package:insta_clone/screens/searchscreens/search_appbar.dart';
 import 'package:insta_clone/uploadscreen/uploadscreen_appbar.dart';
-import 'accountscreen/accounts_appbar.dart';
 import 'activityscreen/activity_appbar.dart';
 import 'instagram_appbar.dart';
 
@@ -11,7 +11,8 @@ class Apbar {
   Widget appbar(BuildContext context) {
     Widget bar;
     if (index == 0) {
-      bar = Instaappbar().appbar1(context);         //if else statements to change the appbar as per the displayed page in bottom nav bar
+      bar = Instaappbar().appbar1(
+          context); //if else statements to change the appbar as per the displayed page in bottom nav bar
     } else if (index == 1) {
       bar = Apbar2().appbar2();
     } else if (index == 2) {

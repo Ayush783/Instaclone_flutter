@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:insta_clone/accountscreen/accountscreen.dart';
-import 'package:insta_clone/searchscreens/homepage_search.dart';
+import 'package:insta_clone/screens/accountscreen/accountscreen.dart';
+import 'package:insta_clone/screens/searchscreens/homepage_search.dart';
 import 'appbar_for_different_screens.dart';
 import 'home_of_homepage/homepage_home.dart';
-
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   //bottom nav bar content at various indexes
 
   List<Widget> _widgetOptions = <Widget>[
@@ -31,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   void _onItemTapped(int index) {
     setState(() {
       HomePage._selectedIndex = index;
-     // HomePage().physic();
+      // HomePage().physic();
     });
   }
 
@@ -46,17 +43,26 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("")),
-          BottomNavigationBarItem(icon: Icon(Icons.search), title: Text("")),
           BottomNavigationBarItem(
-              icon: Icon(MaterialCommunityIcons.plus_box_outline),
-              title: Text("")),
+            icon: Icon(Icons.home),
+            label: "",
+          ),
           BottomNavigationBarItem(
-              icon: Icon(MaterialCommunityIcons.heart_outline),
-              title: Text("")),
+            icon: Icon(Icons.search),
+            label: "",
+          ),
           BottomNavigationBarItem(
-              icon: Icon(MaterialCommunityIcons.account_outline),
-              title: Text(""))
+            icon: Icon(Icons.flag),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.flag),
+            label: "",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.flag),
+            label: "",
+          )
         ],
         currentIndex: HomePage._selectedIndex,
         onTap: _onItemTapped,
@@ -67,5 +73,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-

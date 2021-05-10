@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:insta_clone/login/sigin.dart';
-import 'package:insta_clone/mainpage.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -13,9 +9,6 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   String email;
   String password;
-  final _auth = FirebaseAuth.instance;
-  static String username;
-  final _firestore= Firestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +43,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 70),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 70),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-                  child: Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -80,7 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 decoration: InputDecoration(
                   hintText: 'Email',
                   icon: Icon(
-                    MaterialCommunityIcons.email,
+                    Icons.email,
                     color: Colors.red,
                   ),
                   border: OutlineInputBorder(
@@ -93,14 +86,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 10,
               ),
               TextField(
-                onChanged: (value) {
-                  username = value;
-                },
+                onChanged: (value) {},
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
                   hintText: 'UserName',
                   icon: Icon(
-                    MaterialCommunityIcons.account,
+                    Icons.flag,
                     color: Colors.black,
                   ),
                   border: OutlineInputBorder(
@@ -121,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 decoration: InputDecoration(
                   hintText: 'Password',
                   icon: Icon(
-                    MaterialCommunityIcons.key,
+                    Icons.flag,
                     color: Colors.black54,
                   ),
                   border: OutlineInputBorder(
@@ -136,22 +127,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               RawMaterialButton(
                 highlightElevation: 0,
                 highlightColor: Colors.transparent,
-                onPressed: () async {
-                  try{final user = await _auth.createUserWithEmailAndPassword(
-                      email: email, password: password);
-                      _firestore.collection('userdate').add({username: username, email:email});
-                  if(user!= null){Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MainSreen(),
-                    ),
-                  );
-                  }
-                  }
-                  catch(e){
-                    print(e); 
-                  }
-                },
+                onPressed: () {},
                 splashColor: Colors.transparent,
                 fillColor: Colors.blue,
                 shape: RoundedRectangleBorder(

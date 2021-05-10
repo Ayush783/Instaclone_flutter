@@ -1,7 +1,6 @@
 //post class for homepage to build custom posts
 
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class Post extends StatefulWidget {
   final String img;
@@ -90,12 +89,12 @@ class _PostState extends State<Post> {
                   alignment: AlignmentDirectional.center,
                   children: <Widget>[
                     Icon(
-                      MaterialCommunityIcons.heart,
+                      Icons.flag,
                       color: Colors.black,
                       size: 30,
                     ),
                     Icon(
-                      MaterialCommunityIcons.heart,
+                      Icons.flag,
                       color: color,
                       size: 27,
                     )
