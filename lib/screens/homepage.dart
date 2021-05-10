@@ -9,6 +9,18 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomepageAppBar(controller: controller),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
