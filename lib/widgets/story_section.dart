@@ -7,56 +7,58 @@ class StorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          Column(
-            children: [
-              Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/me.jpg'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            Column(
+              children: [
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/me.jpg'),
+                        ),
                       ),
                     ),
-                  ),
-                  CircleAvatar(
-                    radius: 12,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
-                      radius: 10,
-                      backgroundColor: Colors.blue,
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 16,
+                    CircleAvatar(
+                      radius: 12,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 10,
+                        backgroundColor: Colors.blue,
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 16,
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-              Padding(padding: EdgeInsets.only(top: 4)),
-              Text(
-                "Your story",
-                style: TextStyle(fontFamily: 'monty', fontSize: 12),
-              )
-            ],
-          ),
-          Padding(padding: EdgeInsets.only(right: 4)),
-          StoryButton(image: 'person1', name: 'ElenaTT5'),
-          StoryButton(image: 'person2', name: 'Caroline88'),
-          StoryButton(image: 'person3', name: 'NamiKoko'),
-          StoryButton(image: 'person4', name: 'Roronoazoro'),
-          StoryButton(image: 'person5', name: 'Sanjichef'),
-          StoryButton(image: 'person6', name: 'nicorobin'),
-        ],
+                    )
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(top: 4)),
+                Text(
+                  "Your story",
+                  style: TextStyle(fontFamily: 'monty', fontSize: 12),
+                )
+              ],
+            ),
+            Padding(padding: EdgeInsets.only(right: 4)),
+            StoryButton(image: 'person1', name: 'ElenaTT5'),
+            StoryButton(image: 'person2', name: 'Caroline88'),
+            StoryButton(image: 'person3', name: 'NamiKoko'),
+            StoryButton(image: 'person4', name: 'Roronoazoro'),
+            StoryButton(image: 'person5', name: 'Sanjichef'),
+            StoryButton(image: 'person6', name: 'nicorobin'),
+          ],
+        ),
       ),
     );
   }

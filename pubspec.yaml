@@ -33,3 +33,6 @@ flutter:
     - family: monty
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
+    - family: sen
+      fonts:
+        - asset: assets/fonts/Sen-Regular.ttf
