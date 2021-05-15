@@ -127,7 +127,56 @@ class PostWidget extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Row(
+              children: [
+                Container(
+                  height: 24,
+                  width: 24,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/me.jpg',
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(right: 10)),
+                Text(
+                  'Add comment...',
+                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                ),
+                Spacer(),
+                Text(
+                  '❤️',
+                  style: TextStyle(fontSize: 12),
+                ),
+                Padding(padding: EdgeInsets.only(right: 10)),
+                Text(
+                  '🙌',
+                  style: TextStyle(fontSize: 12),
+                ),
+                Padding(padding: EdgeInsets.only(right: 10)),
+                Icon(
+                  Icons.add_circle_outline,
+                  color: Colors.grey,
+                  size: 16,
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0, top: 4),
+            child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '50 minutes ago',
+                  style: TextStyle(fontSize: 12, color: Colors.grey),
+                )),
+          ),
         ],
       ),
     );
