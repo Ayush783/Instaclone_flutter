@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:insta_clone/screens/ExploreScreen.dart';
 
 class SearchScreen extends StatelessWidget {
   @override
@@ -43,15 +44,11 @@ class SearchScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Expanded(
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                        child: buildContainer(1, context),
                       ),
                       Padding(padding: EdgeInsets.only(bottom: 2)),
                       Expanded(
-                        child: Container(
-                          color: Colors.red,
-                        ),
+                        child: buildContainer(2, context),
                       ),
                     ],
                   ),
@@ -59,9 +56,7 @@ class SearchScreen extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(right: 2)),
                 Expanded(
                   flex: 2,
-                  child: Container(
-                    color: Colors.black,
-                  ),
+                  child: buildContainer(3, context),
                 )
               ],
             ),
@@ -77,21 +72,15 @@ class SearchScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                        child: buildContainer(4, context),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: 2)),
+                      Padding(padding: EdgeInsets.only(right: 2)),
                       Expanded(
-                        child: Container(
-                          color: Colors.red,
-                        ),
+                        child: buildContainer(5, context),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: 2)),
+                      Padding(padding: EdgeInsets.only(right: 2)),
                       Expanded(
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                        child: buildContainer(6, context),
                       ),
                     ],
                   ),
@@ -102,21 +91,15 @@ class SearchScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                        child: buildContainer(1, context),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: 2)),
+                      Padding(padding: EdgeInsets.only(right: 2)),
                       Expanded(
-                        child: Container(
-                          color: Colors.red,
-                        ),
+                        child: buildContainer(2, context),
                       ),
-                      Padding(padding: EdgeInsets.only(bottom: 2)),
+                      Padding(padding: EdgeInsets.only(right: 2)),
                       Expanded(
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                        child: buildContainer(3, context),
                       ),
                     ],
                   ),
@@ -132,9 +115,7 @@ class SearchScreen extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 2,
-                  child: Container(
-                    color: Colors.black,
-                  ),
+                  child: buildContainer(4, context),
                 ),
                 Padding(padding: EdgeInsets.only(right: 2)),
                 Expanded(
@@ -142,15 +123,11 @@ class SearchScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Expanded(
-                        child: Container(
-                          color: Colors.green,
-                        ),
+                        child: buildContainer(5, context),
                       ),
                       Padding(padding: EdgeInsets.only(bottom: 2)),
                       Expanded(
-                        child: Container(
-                          color: Colors.red,
-                        ),
+                        child: buildContainer(6, context),
                       ),
                     ],
                   ),
@@ -159,6 +136,24 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  GestureDetector buildContainer(int i, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ExploreScreen(),
+        ));
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage('assets/images/image$i.jpg'),
+          ),
+        ),
       ),
     );
   }
